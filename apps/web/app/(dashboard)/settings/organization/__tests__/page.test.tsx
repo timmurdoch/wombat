@@ -353,7 +353,7 @@ describe("Organization profile", () => {
     api.roles = ["organization-viewer"];
     renderPage();
     expect(
-      screen.getByText("Your organization in GOAT. Owners and admins can change it.")
+      screen.getByText("Your organization in WOMBAT. Owners and admins can change it.")
     ).toBeInTheDocument();
     const summary = screen.getByRole("region", { name: "Your organization" });
     expect(summary).toHaveTextContent("Stadt Musterhausen");

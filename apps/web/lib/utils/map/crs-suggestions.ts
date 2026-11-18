@@ -112,6 +112,18 @@ const REGIONAL_CRS: RegionalCRS[] = [
   // ── Australia ──
   { code: "7844", label: "GDA2020 (EPSG:7844)", bbox: [93.41, -60.56, 173.35, -8.47] },
   { code: "3112", label: "GDA94 / Geoscience Australia Lambert (EPSG:3112)", bbox: [93.41, -60.56, 173.35, -8.47] },
+  { code: "4283", label: "GDA94 (EPSG:4283)", bbox: [93.41, -60.55, 173.34, -8.47] },
+  { code: "7849", label: "GDA2020 / MGA zone 49 (EPSG:7849)", bbox: [108.0, -37.84, 114.01, -10.72] },
+  { code: "7850", label: "GDA2020 / MGA zone 50 (EPSG:7850)", bbox: [114.0, -38.53, 120.01, -12.06] },
+  { code: "7851", label: "GDA2020 / MGA zone 51 (EPSG:7851)", bbox: [120.0, -38.07, 126.01, -10.46] },
+  { code: "7852", label: "GDA2020 / MGA zone 52 (EPSG:7852)", bbox: [125.99, -37.38, 132.0, -9.1] },
+  { code: "7853", label: "GDA2020 / MGA zone 53 (EPSG:7853)", bbox: [132.0, -40.71, 138.01, -8.88] },
+  { code: "7854", label: "GDA2020 / MGA zone 54 (EPSG:7854)", bbox: [138.0, -48.19, 144.01, -9.08] },
+  { code: "7855", label: "GDA2020 / MGA zone 55 (EPSG:7855)", bbox: [144.0, -50.89, 150.01, -9.23] },
+  { code: "7856", label: "GDA2020 / MGA zone 56 (EPSG:7856)", bbox: [150.0, -58.96, 156.0, -13.87] },
+  { code: "7857", label: "GDA2020 / MGA zone 57 (EPSG:7857)", bbox: [156.0, -60.56, 162.01, -14.08] },
+  { code: "7858", label: "GDA2020 / MGA zone 58 (EPSG:7858)", bbox: [162.0, -59.39, 168.0, -25.94] },
+  { code: "7859", label: "GDA2020 / MGA zone 59 (EPSG:7859)", bbox: [168.0, -32.48, 173.35, -25.61] },
 
   // ── Brazil ──
   { code: "5880", label: "SIRGAS 2000 / Brazil Polyconic (EPSG:5880)", bbox: [-73.98, -33.77, -28.85, 5.27] },

@@ -150,10 +150,10 @@ jq -e '.services.keycloak.environment.GOAT_SMTP_PORT == .services.core.environme
 jq -e '.services.keycloak.environment | .GOAT_SMTP_AUTH == "true" and .GOAT_SMTP_FROM == "mailer@example.org"' <<<"$j" >/dev/null || fail "keycloak smtp login or sender"
 
 variant=support-email
-# NEXT_PUBLIC_SUPPORT_EMAIL reaches the web container, and is empty (the app uses its default) while unset.
+# NEXT_PUBLIC_SUPPORT_EMAIL reaches the web container: the .env.example address by default, or the one set.
 d=$(make_variant --public-url https://goat.example.org --tls off)
 j=$(render "$d")
-jq -e '.services.web.environment.NEXT_PUBLIC_SUPPORT_EMAIL == ""' <<<"$j" >/dev/null || fail "support email not empty by default"
+jq -e '.services.web.environment.NEXT_PUBLIC_SUPPORT_EMAIL == "support@saberbi.com.au"' <<<"$j" >/dev/null || fail "support email not the .env.example default"
 echo "NEXT_PUBLIC_SUPPORT_EMAIL=help@example.org" >> "$d/.env"
 j=$(render "$d"); check_common "$j"
 jq -e '.services.web.environment.NEXT_PUBLIC_SUPPORT_EMAIL == "help@example.org"' <<<"$j" >/dev/null || fail "support email not passed to web"

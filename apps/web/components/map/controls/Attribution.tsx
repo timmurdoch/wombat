@@ -22,7 +22,7 @@ const GOAT_HREF = "https://www.plan4better.de/en/goat";
 export const goatAttribution = (label: string): string =>
   `<a href="${GOAT_HREF}" target="_blank">${label}</a>`;
 
-export const DEFAULT_ATTRIBUTIONS = [goatAttribution("Made with GOAT")];
+export const DEFAULT_ATTRIBUTIONS = [goatAttribution("Made with WOMBAT")];
 
 export interface AttributionParts {
   madeWith: string[];

@@ -313,7 +313,7 @@ describe("Domains page", () => {
     api.config = undefined;
     api.configError = new Error("502");
     renderPage();
-    const help = screen.getByRole("region", { name: "How a domain points to GOAT" });
+    const help = screen.getByRole("region", { name: "How a domain points to WOMBAT" });
     expect(help).toHaveTextContent("That could not be loaded.");
     await userEvent.click(within(help).getByRole("button", { name: "Try again" }));
     expect(api.configMutate).toHaveBeenCalled();

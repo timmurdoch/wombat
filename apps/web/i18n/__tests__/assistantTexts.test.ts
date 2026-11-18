@@ -167,10 +167,10 @@ describe("assistant texts", () => {
       `${notice.de} Details finden Sie in der <policy>Datenschutzerklärung</policy>.`
     );
     expect(EN.assistant_caveat_fallback).toBe(
-      "Your organization's AI provider is unavailable. This answer uses GOAT AI, so this request was processed by GOAT AI's model provider."
+      "Your organization's AI provider is unavailable. This answer uses WOMBAT AI, so this request was processed by WOMBAT AI's model provider."
     );
     expect(DE.assistant_caveat_fallback).toBe(
-      "Der KI-Anbieter Ihrer Organisation ist nicht erreichbar. Diese Antwort verwendet GOAT AI, die Anfrage wurde daher vom Modell-Anbieter von GOAT AI verarbeitet."
+      "Der KI-Anbieter Ihrer Organisation ist nicht erreichbar. Diese Antwort verwendet WOMBAT AI, die Anfrage wurde daher vom Modell-Anbieter von WOMBAT AI verarbeitet."
     );
     // The AI settings page says who processes what, and that the organization must allow it.
     expect(EN.settings_ai_subtitle).toMatch(

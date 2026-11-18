@@ -15,7 +15,7 @@ import { providerName } from "@/lib/validations/assistant";
 import { eyebrowSx, headerIconButtonSx, mutedText } from "@/components/assistant/styles";
 
 /** GOAT AI is a product name: the same in every language. */
-const GOAT_AI = "GOAT AI";
+const GOAT_AI = "WOMBAT AI";
 
 /**
  * Per-answer details (spec §10, D3). An own connection's answer names its

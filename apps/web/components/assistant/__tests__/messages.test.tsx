@@ -655,7 +655,7 @@ describe("assistant messages", () => {
     expect(rows).toEqual([
       ["usage_ai_credits", "2"],
       ["assistant_details_steps", "14"],
-      ["assistant_details_model", "GOAT AI"],
+      ["assistant_details_model", "WOMBAT AI"],
     ]);
     // The hosting place saved with the answer, in one quiet line.
     expect(screen.getByText("assistant_details_hosted_in")).toBeTruthy();
@@ -671,7 +671,7 @@ describe("assistant messages", () => {
       />
     );
     fireEvent.click(screen.getByRole("button", { name: "assistant_details" }));
-    expect(screen.getByText("GOAT AI")).toBeTruthy();
+    expect(screen.getByText("WOMBAT AI")).toBeTruthy();
     expect(screen.queryByText("assistant_details_hosted_in")).toBeNull();
     expect(screen.queryByText("usage_ai_credits")).toBeNull();
     expect(screen.queryByText("assistant_details_steps")).toBeNull();
@@ -688,7 +688,7 @@ describe("assistant messages", () => {
       fireEvent.click(screen.getByRole("button", { name: "assistant_details" }));
       expect(screen.queryByText("usage_ai_credits")).toBeNull();
       expect(screen.getByText("assistant_details_steps")).toBeTruthy();
-      expect(screen.getByText("GOAT AI")).toBeTruthy();
+      expect(screen.getByText("WOMBAT AI")).toBeTruthy();
     } finally {
       features.value = { billing: true };
     }
@@ -703,7 +703,7 @@ describe("assistant messages", () => {
     fireEvent.click(screen.getByRole("button", { name: "assistant_details" }));
     for (const text of ["qwen3", "OpenAI", "12", "3", "assistant_details_input_tokens"])
       expect(screen.getByText(text)).toBeTruthy();
-    expect(screen.queryByText("GOAT AI")).toBeNull();
+    expect(screen.queryByText("WOMBAT AI")).toBeNull();
     expect(screen.queryByText("usage_ai_credits")).toBeNull();
   });
 

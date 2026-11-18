@@ -167,12 +167,12 @@ describe("AiCreditsDetail", () => {
     expect(screen.getByText("out of 2,000 this period. Resets on 30 Nov 2026.")).toBeInTheDocument();
     expect(
       screen.getByText(
-        "Each answer of GOAT AI uses 1 AI credit up to 10 steps, 2 up to 20 steps, 3 above. Each editor seat adds 200 AI credits a month, shared by everyone in the organization. Answers from your own AI connection don't use any."
+        "Each answer of WOMBAT AI uses 1 AI credit up to 10 steps, 2 up to 20 steps, 3 above. Each editor seat adds 200 AI credits a month, shared by everyone in the organization. Answers from your own AI connection don't use any."
       )
     ).toBeInTheDocument();
     expect(
       screen.getByText(
-        "When the AI credits are used up, GOAT AI answers again after the reset. An own AI connection keeps working.",
+        "When the AI credits are used up, WOMBAT AI answers again after the reset. An own AI connection keeps working.",
         { exact: false }
       )
     ).toBeInTheDocument();
@@ -215,7 +215,7 @@ describe("AiCreditsDetail", () => {
     const view = renderDetail(null);
     expect(screen.queryByText("No members in this range")).toBeNull();
     view.rerender(<AiCreditsDetail balance={{ ...BALANCE, used_ai_credits: 0 }} />);
-    expect(screen.getByText("No answers from GOAT AI in this period yet")).toBeInTheDocument();
+    expect(screen.getByText("No answers from WOMBAT AI in this period yet")).toBeInTheDocument();
   });
 
   it("searches the members as one types and names a search that finds none", async () => {
@@ -287,7 +287,7 @@ describe("AiCreditsDetail", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByText(
-        "When the AI credits are used up, GOAT AI stops answering until the organization has a plan. An own AI connection keeps working.",
+        "When the AI credits are used up, WOMBAT AI stops answering until the organization has a plan. An own AI connection keeps working.",
         { exact: false }
       )
     ).toBeInTheDocument();
@@ -363,7 +363,7 @@ describe("AiCreditsDetail", () => {
   it("tells an organization without answers how AI credits are used", () => {
     api.rows.day = [row("2026-11-05", { compute: 2, credits: 2 })];
     renderDetail({ ...BALANCE, used_ai_credits: 0 });
-    expect(screen.getByText("No answers from GOAT AI in this period yet")).toBeInTheDocument();
+    expect(screen.getByText("No answers from WOMBAT AI in this period yet")).toBeInTheDocument();
     expect(screen.queryByRole("table")).not.toBeInTheDocument();
     // The way to another range or grouping stays.
     expect(screen.getByRole("button", { name: "This period" })).toBeInTheDocument();

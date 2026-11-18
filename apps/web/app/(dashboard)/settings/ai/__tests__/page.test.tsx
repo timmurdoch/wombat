@@ -125,7 +125,7 @@ const page = () => (
 const renderPage = () => render(page());
 const choices = () => screen.getByRole("radiogroup", { name: "What the assistant answers with" });
 const aiSwitch = () => screen.getByRole("switch", { name: "AI for this organization" });
-const FALLBACK = "Fall back to GOAT AI if your provider fails";
+const FALLBACK = "Fall back to WOMBAT AI if your provider fails";
 
 /** A promise the test settles, to look at the page while a request runs. */
 const deferred = <T,>() => {
@@ -170,7 +170,7 @@ describe("AI page", () => {
 
   it("shows GOAT AI with where it is hosted only, never its model", async () => {
     renderPage();
-    const goatAi = within(choices()).getByRole("radio", { name: /^GOAT AI \(included\)/ });
+    const goatAi = within(choices()).getByRole("radio", { name: /^WOMBAT AI \(included\)/ });
     await expect(goatAi).toHaveAttribute("aria-checked", "true");
     expect(goatAi).toHaveTextContent("Hosted in the EU");
     expect(goatAi).toHaveTextContent("Active");
@@ -187,7 +187,7 @@ describe("AI page", () => {
       },
     };
     renderPage();
-    const goatAi = within(choices()).getByRole("radio", { name: /^GOAT AI \(included\)/ });
+    const goatAi = within(choices()).getByRole("radio", { name: /^WOMBAT AI \(included\)/ });
     await expect(goatAi).toHaveAttribute("aria-checked", "true");
     expect(goatAi).not.toHaveTextContent("Hosted in");
     expect(screen.queryByText(/claude-sonnet/)).toBeNull();
@@ -252,7 +252,7 @@ describe("AI page", () => {
   it("says AI is on and what answers", () => {
     renderPage();
     expect(
-      screen.getByText("On. All members see the assistant. It answers with GOAT AI (included).")
+      screen.getByText("On. All members see the assistant. It answers with WOMBAT AI (included).")
     ).toBeInTheDocument();
   });
 
@@ -386,14 +386,14 @@ describe("AI page", () => {
     api.settings = { ...SETTINGS, active_connection_id: "c1", allow_default_fallback: true };
     api.connections = [{ ...CONNECTION, active: true }];
     renderPage();
-    await userEvent.click(within(choices()).getByRole("radio", { name: /^GOAT AI/ }));
+    await userEvent.click(within(choices()).getByRole("radio", { name: /^WOMBAT AI/ }));
     expect(api.updateAssistantSettings).toHaveBeenCalledWith({
       enabled: true,
       active_connection_id: null,
       data_policy: "standard",
       allow_default_fallback: false,
     });
-    await waitFor(() => expect(api.undoMessage).toBe("GOAT AI (included) now answers all questions."));
+    await waitFor(() => expect(api.undoMessage).toBe("WOMBAT AI (included) now answers all questions."));
     await api.undo?.();
     expect(api.updateAssistantSettings).toHaveBeenLastCalledWith(
       expect.objectContaining({ active_connection_id: "c1", allow_default_fallback: true })
@@ -416,7 +416,7 @@ describe("AI page", () => {
     for (const radio of within(choices()).getAllByRole("radio")) {
       await expect(radio).toHaveAttribute("aria-disabled", "true");
     }
-    expect(within(choices()).getByRole("radio", { name: /^GOAT AI/ })).not.toHaveTextContent("Active");
+    expect(within(choices()).getByRole("radio", { name: /^WOMBAT AI/ })).not.toHaveTextContent("Active");
     await userEvent.click(within(choices()).getByRole("radio", { name: /^Own vLLM/ }));
     expect(api.updateAssistantSettings).not.toHaveBeenCalled();
     expect(toast.info).not.toHaveBeenCalled();
@@ -430,8 +430,8 @@ describe("AI page", () => {
       instance: { ...SETTINGS.instance, goat_ai: { available: false, provider: null, model: null } },
     };
     renderPage();
-    const goatAi = within(choices()).getByRole("radio", { name: /^GOAT AI/ });
-    expect(goatAi).toHaveTextContent("GOAT AI is not available on this instance.");
+    const goatAi = within(choices()).getByRole("radio", { name: /^WOMBAT AI/ });
+    expect(goatAi).toHaveTextContent("WOMBAT AI is not available on this instance.");
     // Nothing answers, so nothing is shown as chosen.
     await expect(goatAi).toHaveAttribute("aria-checked", "false");
     await expect(goatAi).toHaveAttribute("aria-disabled", "true");

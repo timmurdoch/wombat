@@ -20,13 +20,13 @@ type PartialLanguageMetadataContent = Partial<LanguageMetadataContent>;
 
 const defaultContentMap: Record<string, LanguageMetadataContent> = {
   en: {
-    title: "GOAT | WebGIS with Planning Intelligence",
+    title: "WOMBAT | WebGIS with Planning Intelligence",
     description: "Intelligent software for modern web mapping and integrated planning",
     locale: "en_US",
     image: `${ASSETS_URL}/img/thumbnails/goat/social_media_preview_en.png`,
   },
   de: {
-    title: "GOAT | WebGIS mit Planungsintelligenz",
+    title: "WOMBAT | WebGIS mit Planungsintelligenz",
     description: "Intelligente Software für modernes Web-Mapping und integrierte Planung",
     locale: "de_DE",
     image: `${ASSETS_URL}/img/thumbnails/goat/social_media_preview_de.png`,
@@ -78,7 +78,7 @@ export function getLocalizedMetadata(
       title: content.title,
       description: content.description,
       locale: content.locale,
-      siteName: "GOAT",
+      siteName: "WOMBAT",
       type: "website",
       images: [
         {
@@ -96,8 +96,8 @@ export function getLocalizedMetadata(
       description: content.description,
       card: "summary_large_image",
       images: [content.image],
-      creator: "@plan4better",
-      site: "@plan4better",
+      creator: "SaberBI",
+      site: "SaberBI",
     },
     robots: {
       index: robotsIndex,

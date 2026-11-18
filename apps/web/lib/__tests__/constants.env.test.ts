@@ -203,7 +203,7 @@ describe("DOCS_URL", () => {
 });
 
 describe("SUPPORT_EMAIL and SUPPORT_MAILTO", () => {
-  const MAILTO_SUBJECT = "?subject=GOAT%20Support%20Request";
+  const MAILTO_SUBJECT = "?subject=WOMBAT%20Support%20Request";
   const DEFAULT = "support@plan4better.de";
 
   it("use NEXT_PUBLIC_SUPPORT_EMAIL, trimmed", async () => {

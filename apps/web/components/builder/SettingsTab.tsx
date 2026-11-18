@@ -410,7 +410,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
               selectedMarker={
                 settings?.favicon_url
                   ? {
-                      name: (settings.favicon_url as string) === DEFAULT_FAVICON_URL ? "GOAT" : t("favicon"),
+                      name: (settings.favicon_url as string) === DEFAULT_FAVICON_URL ? "WOMBAT" : t("favicon"),
                       url: settings.favicon_url as string,
                       category: "",
                       source: "custom",

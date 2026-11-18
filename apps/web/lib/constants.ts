@@ -69,7 +69,7 @@ const configuredSupportEmail = (() => {
 
 export const SUPPORT_EMAIL = configuredSupportEmail ?? DEFAULT_SUPPORT_EMAIL;
 
-export const SUPPORT_MAILTO = `mailto:${SUPPORT_EMAIL}?subject=GOAT%20Support%20Request`;
+export const SUPPORT_MAILTO = `mailto:${SUPPORT_EMAIL}?subject=WOMBAT%20Support%20Request`;
 
 /** The website's privacy policy for a UI language; undefined without `NEXT_PUBLIC_WEBSITE_URL`. */
 export const privacyPolicyUrl = (lng: string): string | undefined =>

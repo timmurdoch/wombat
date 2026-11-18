@@ -25,7 +25,7 @@ describe("buildAttributionParts", () => {
   });
 
   it("default attributions no longer include MapLibre", () => {
-    expect(DEFAULT_ATTRIBUTIONS.join(" ")).toContain("Made with GOAT");
+    expect(DEFAULT_ATTRIBUTIONS.join(" ")).toContain("Made with WOMBAT");
     expect(DEFAULT_ATTRIBUTIONS.join(" ").toLowerCase()).not.toContain("maplibre");
   });
 });

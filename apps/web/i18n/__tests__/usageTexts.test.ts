@@ -273,8 +273,8 @@ describe("usage page texts", () => {
   });
 
   it("charge each answer, call admins Admins and label in sentence case", () => {
-    expect(EN.usage_ai_explain_rule).toMatch(/^Each answer of GOAT AI uses\b/);
-    expect(DE.usage_ai_explain_rule).toMatch(/^Jede Antwort von GOAT AI verbraucht\b/);
+    expect(EN.usage_ai_explain_rule).toMatch(/^Each answer of WOMBAT AI uses\b/);
+    expect(DE.usage_ai_explain_rule).toMatch(/^Jede Antwort von WOMBAT AI verbraucht\b/);
     expect([EN.usage_role_admins, DE.usage_role_admins]).toEqual([
       "Owners and admins",
       "Eigentümer und Admins",
